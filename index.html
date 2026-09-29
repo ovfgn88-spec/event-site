@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#173c32">
-  <meta name="description" content="THE BIG CAUSE: a fictional family charity motorcycle and community festival in Brighton. One day. Many ways to help.">
+  <meta name="theme-color" content="#203b30">
+  <meta name="description" content="THE BIG CAUSE is a fictional family charity motorcycle and community festival in Brighton. One day. Many ways to help.">
   <title>THE BIG CAUSE | One day. Many ways to help.</title>
   <style>
     :root {
-      --green: #173c32;
-      --green-deep: #102d26;
-      --cream: #f8f3e7;
-      --ivory: #fffdf7;
-      --gold: #c5a465;
-      --ink: #252b27;
-      --sage: #dce3d5;
-      --muted: #526057;
-      --border: #c8cbbb;
-      --serif: Baskerville, "Baskerville Old Face", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+      --green: #203b30;
+      --deep-green: #172d25;
+      --cream: #f6f2e9;
+      --ivory: #fffdf8;
+      --brass: #c2a66e;
+      --ink: #29342e;
+      --muted: #5a6258;
+      --sage: #e2e6dc;
+      --line: #c8ccbe;
+      --serif: Baskerville, "Baskerville Old Face", "Palatino Linotype", Georgia, serif;
       --sans: "Gill Sans", "Gill Sans MT", "Trebuchet MS", system-ui, sans-serif;
     }
 
@@ -29,9 +29,9 @@
       margin: 0;
       background: var(--cream);
       color: var(--ink);
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: var(--sans);
       font-size: 1.125rem;
-      line-height: 1.75;
+      line-height: 1.7;
       font-kerning: normal;
       -webkit-text-size-adjust: 100%;
     }
@@ -43,7 +43,7 @@
 
     a:focus-visible {
       outline: 3px solid currentColor;
-      outline-offset: 6px;
+      outline-offset: 5px;
     }
 
     .skip-link {
@@ -51,11 +51,10 @@
       z-index: 10;
       top: 1rem;
       left: 1rem;
-      padding: 0.7rem 1rem;
+      padding: 0.75rem 1rem;
       transform: translateY(-200%);
-      background: var(--cream);
-      color: var(--green-deep);
-      font-weight: 700;
+      background: var(--ivory);
+      color: var(--green);
     }
 
     .skip-link:focus {
@@ -67,34 +66,32 @@
       margin-inline: auto;
     }
 
-    h1,
-    h2,
-    h3,
-    p {
+    h1, h2, h3, p {
       margin-top: 0;
     }
 
-    h2,
-    h3 {
-      line-height: 1.12;
+    h1, h2, h3 {
       text-wrap: balance;
     }
 
     h2 {
       margin-bottom: 1.5rem;
       font-family: var(--serif);
-      font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+      font-size: clamp(2.5rem, 4.7vw, 4.5rem);
       font-weight: 400;
-      letter-spacing: -0.025em;
+      letter-spacing: -0.035em;
+      line-height: 1.08;
     }
 
     h3 {
       font-family: var(--serif);
-      font-weight: 700;
+      font-size: 1.75rem;
+      font-weight: 400;
+      line-height: 1.2;
     }
 
     p {
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.3rem;
     }
 
     p:last-child {
@@ -102,212 +99,259 @@
     }
 
     .eyebrow {
-      margin-bottom: 1.25rem;
       font-family: var(--sans);
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       font-weight: 700;
-      letter-spacing: 0.19em;
-      line-height: 1.5;
+      letter-spacing: 0.18em;
+      line-height: 1.6;
       text-transform: uppercase;
     }
 
     .masthead {
-      background: var(--cream);
-      color: var(--green);
-      border-bottom: 1px solid var(--gold);
+      border-bottom: 1px solid var(--line);
+      background: var(--ivory);
     }
 
     .masthead-inner {
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
       align-items: center;
-      justify-content: space-between;
-      gap: 1rem 2rem;
-      padding-block: 1.25rem;
-    }
-
-    .wordmark {
-      font-family: var(--serif);
-      font-size: 1.65rem;
-      font-weight: 700;
-      letter-spacing: 0.055em;
-      line-height: 1.2;
+      gap: 2rem;
+      min-height: 112px;
+      padding-block: 1.5rem;
     }
 
     .masthead-note {
+      max-width: 230px;
       margin: 0;
-      font-family: var(--sans);
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       font-weight: 700;
-      letter-spacing: 0.15em;
-      text-align: right;
+      letter-spacing: 0.14em;
+      line-height: 1.7;
       text-transform: uppercase;
     }
 
-    .hero {
-      padding: clamp(1rem, 3vw, 2.5rem);
-      background: var(--green);
-      color: var(--cream);
+    .masthead-note:last-child {
+      justify-self: end;
+      text-align: right;
     }
 
-    .hero-frame {
-      position: relative;
-      max-width: 1400px;
-      margin-inline: auto;
-      padding: clamp(3rem, 7vw, 6.5rem) 1.5rem 2rem;
-      border: 1px solid var(--gold);
+    .wordmark {
+      color: var(--green);
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      line-height: 1.15;
       text-align: center;
     }
 
-    .hero-frame::before {
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(4.5rem, 9vw, 8.5rem) 1.5rem;
+      background: var(--green);
+      color: var(--cream);
+      text-align: center;
+    }
+
+    .hero::before,
+    .hero::after {
       position: absolute;
-      inset: 6px;
-      border: 1px solid rgb(197 164 101 / 35%);
+      top: 2rem;
+      bottom: 2rem;
+      width: 1px;
+      background: rgb(194 166 110 / 45%);
       content: "";
       pointer-events: none;
     }
 
+    .hero::before {
+      left: 2rem;
+    }
+
+    .hero::after {
+      right: 2rem;
+    }
+
+    .hero-inner {
+      max-width: 1040px;
+      margin-inline: auto;
+    }
+
     .hero .eyebrow {
-      color: var(--gold);
+      margin-bottom: 2.4rem;
+      color: var(--brass);
     }
 
     #event-name {
-      max-width: 1000px;
-      margin: 0 auto 1.5rem;
+      margin: 0 0 1.8rem;
       font-family: var(--serif);
-      font-size: clamp(3.3rem, 10vw, 8.5rem);
-      font-weight: 700;
-      letter-spacing: -0.025em;
-      line-height: 0.98;
-      text-wrap: balance;
+      font-size: clamp(3.25rem, 8.5vw, 7.75rem);
+      font-weight: 400;
+      letter-spacing: 0.015em;
+      line-height: 1;
     }
 
     #event-tagline {
       margin-bottom: 2rem;
       font-family: var(--serif);
-      font-size: clamp(1.55rem, 3vw, 2.4rem);
+      font-size: clamp(1.65rem, 3vw, 2.45rem);
       font-style: italic;
-      font-weight: 400;
-      letter-spacing: 0.01em;
-      line-height: 1.3;
-    }
-
-    .hero-description {
-      max-width: 580px;
-      margin: 0 auto;
-      color: var(--sage);
-      font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+      line-height: 1.35;
     }
 
     .hero-rule {
-      width: 5rem;
-      height: 3px;
-      margin: 2rem auto;
-      background: var(--gold);
+      width: 4rem;
+      height: 1px;
+      margin: 2.5rem auto;
+      background: var(--brass);
     }
 
-    .hero-details {
+    .hero-description {
+      max-width: 520px;
+      margin-inline: auto;
+      color: #e1e5d9;
+      font-size: 1.15rem;
+      line-height: 1.75;
+    }
+
+    .event-ribbon {
+      padding-block: 1.3rem;
+      border-bottom: 1px solid var(--line);
+      background: var(--ivory);
+    }
+
+    .event-ribbon ul {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 0.75rem 2rem;
-      margin: 3.5rem 0 0;
-      padding: 1.5rem 0 0;
-      border-top: 1px solid rgb(197 164 101 / 55%);
+      gap: 0.75rem 3rem;
+      margin: 0;
+      padding: 0;
       list-style: none;
-      font-family: var(--sans);
-      font-size: 0.9rem;
+      color: var(--green);
+      font-size: 0.8rem;
       font-weight: 700;
-      letter-spacing: 0.09em;
+      letter-spacing: 0.1em;
+      text-align: center;
       text-transform: uppercase;
-      font-variant-numeric: lining-nums;
     }
 
     .section {
-      padding-block: clamp(3.5rem, 7vw, 6rem);
+      padding-block: clamp(4rem, 8vw, 7rem);
     }
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1.05fr;
-      gap: 2rem 5rem;
+      grid-template-columns: 0.9fr 1.1fr;
       align-items: start;
+      gap: 3rem 7rem;
     }
 
     .about-heading {
-      max-width: 510px;
       color: var(--green);
     }
 
+    .about-heading h2 {
+      margin-bottom: 0;
+    }
+
     .about-copy {
-      padding-top: 2.5rem;
+      padding-top: 2.4rem;
     }
 
     .lead {
       font-family: var(--serif);
-      font-size: 1.4rem;
-      line-height: 1.55;
+      font-size: clamp(1.4rem, 2.2vw, 1.7rem);
+      line-height: 1.5;
     }
 
     .mission {
       background: var(--sage);
-      border-block: 1px solid var(--border);
     }
 
     .mission-grid {
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 2.5rem 5rem;
-      align-items: start;
+      grid-template-columns: 0.8fr 1.2fr;
+      align-items: center;
+      gap: 3.5rem 6rem;
     }
 
-    .mission h2 {
+    .club-panel {
+      padding: clamp(2rem, 4vw, 3.5rem);
+      border: 1px solid #9ca791;
+      outline: 1px solid #9ca791;
+      outline-offset: -8px;
+      color: var(--green);
+      text-align: center;
+    }
+
+    .club-panel .eyebrow {
+      margin-bottom: 2rem;
+    }
+
+    .club-panel h3 {
+      margin-bottom: 1.5rem;
+      font-size: clamp(2.1rem, 3.5vw, 3rem);
+      letter-spacing: 0.045em;
+    }
+
+    .club-panel p:not(.eyebrow) {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      line-height: 1.55;
+    }
+
+    .mission-copy h2 {
       color: var(--green);
     }
 
     .mission-list {
-      margin: 0;
+      margin: 1.7rem 0 0;
       padding: 0;
       list-style: none;
-      border-top: 1px solid #97a68f;
+      border-top: 1px solid #a7b29d;
     }
 
     .mission-list li {
-      display: grid;
-      grid-template-columns: 1rem 1fr;
-      gap: 0.75rem;
-      padding-block: 1.15rem;
-      border-bottom: 1px solid #97a68f;
+      position: relative;
+      padding: 0.95rem 0 0.95rem 1.3rem;
+      border-bottom: 1px solid #a7b29d;
+      font-size: 1.05rem;
     }
 
     .mission-list li::before {
-      margin-top: 0.65rem;
-      width: 0.4rem;
-      height: 0.4rem;
-      background: var(--green);
+      position: absolute;
+      top: 1.65rem;
+      left: 0;
+      width: 5px;
+      height: 5px;
       border-radius: 50%;
+      background: var(--green);
       content: "";
     }
 
-    .section-intro {
-      max-width: 680px;
-      margin-bottom: 2.5rem;
+    .section-heading {
+      max-width: 700px;
+      margin: 0 auto 3.5rem;
+      color: var(--green);
+      text-align: center;
     }
 
-    .section-intro h2 {
-      color: var(--green);
+    .section-heading > p:last-child {
+      color: var(--muted);
     }
 
     .cards {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 1rem;
+      gap: 2rem;
     }
 
     .card {
-      padding: 1.8rem 1.5rem 2rem;
-      background: var(--ivory);
-      border: 1px solid var(--border);
-      border-top: 4px solid var(--green);
+      padding-top: 1.4rem;
+      border-top: 1px solid #9d9278;
     }
 
     .card-number {
@@ -315,40 +359,37 @@
       margin-bottom: 2rem;
       color: var(--muted);
       font-family: var(--serif);
-      font-size: 1.05rem;
+      font-size: 1rem;
       font-style: italic;
-      font-variant-numeric: oldstyle-nums;
     }
 
     .card h3 {
       margin-bottom: 1rem;
       color: var(--green);
-      font-family: var(--serif);
-      font-size: 1.65rem;
-      font-weight: 700;
-      letter-spacing: -0.015em;
+      font-size: 1.8rem;
+      letter-spacing: -0.025em;
     }
 
     .card p {
-      font-size: 1rem;
+      font-size: 1.05rem;
       line-height: 1.7;
     }
 
     .event-info {
-      background: var(--green-deep);
+      background: var(--deep-green);
       color: var(--cream);
-    }
-
-    .event-info .eyebrow {
-      color: var(--gold);
     }
 
     .info-header {
       display: flex;
       justify-content: space-between;
       align-items: end;
-      gap: 1.5rem 3rem;
-      margin-bottom: 2.5rem;
+      gap: 2rem 4rem;
+      margin-bottom: 3rem;
+    }
+
+    .event-info .eyebrow {
+      color: var(--brass);
     }
 
     .info-header h2 {
@@ -356,24 +397,26 @@
     }
 
     .info-header > p {
-      max-width: 320px;
-      color: var(--sage);
+      max-width: 300px;
+      color: #e1e5d9;
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-style: italic;
     }
 
     .info-grid {
       display: grid;
-      grid-template-columns: 1fr 0.8fr 1.4fr 0.7fr;
+      grid-template-columns: 1.1fr 0.85fr 1.3fr 0.65fr;
       gap: 2rem;
       margin: 0;
       padding-top: 2rem;
-      border-top: 1px solid var(--gold);
+      border-top: 1px solid rgb(194 166 110 / 65%);
     }
 
     .info-grid dt {
-      margin-bottom: 0.8rem;
-      color: var(--gold);
-      font-family: var(--sans);
-      font-size: 0.8rem;
+      margin-bottom: 1rem;
+      color: var(--brass);
+      font-size: 0.75rem;
       font-weight: 700;
       letter-spacing: 0.17em;
       text-transform: uppercase;
@@ -382,111 +425,128 @@
     .info-grid dd {
       margin: 0;
       font-family: var(--serif);
-      font-size: 1.55rem;
+      font-size: 1.6rem;
       line-height: 1.35;
       font-variant-numeric: lining-nums;
     }
 
-    .info-grid .detail {
+    .detail {
       display: block;
-      margin-top: 0.4rem;
-      color: var(--sage);
+      margin-top: 0.5rem;
+      color: #e1e5d9;
       font-family: var(--sans);
       font-size: 1rem;
-      letter-spacing: 0.025em;
     }
 
     footer {
-      padding-block: 2rem;
-      background: var(--cream);
+      padding-block: 2.5rem;
+      background: var(--ivory);
       color: var(--green);
     }
 
     .footer-inner {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 1.5rem 3rem;
+      justify-content: space-between;
+      gap: 2rem 4rem;
     }
 
     .footer-brand {
       flex-shrink: 0;
       font-family: var(--serif);
       font-size: 1.35rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.05em;
     }
 
     .disclaimer {
-      max-width: 500px;
+      max-width: 460px;
       margin: 0;
+      color: var(--muted);
       font-size: 0.95rem;
       text-align: right;
     }
 
     @media (max-width: 1000px) {
-      .cards {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
       .about-grid,
       .mission-grid {
-        column-gap: 2.5rem;
+        column-gap: 3rem;
       }
 
+      .cards,
       .info-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2.5rem;
       }
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 680px) {
       .container {
         width: calc(100% - 2.5rem);
       }
 
       .masthead-inner {
-        flex-direction: column;
-        gap: 0.4rem;
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
+        padding-block: 1.3rem;
       }
 
-      .masthead-note {
+      .wordmark {
+        grid-row: 1;
+        font-size: 1.8rem;
+      }
+
+      .masthead-note,
+      .masthead-note:last-child {
+        max-width: none;
+        justify-self: center;
         font-size: 0.65rem;
         text-align: center;
       }
 
-      .hero-frame {
-        padding: 3rem 1rem 1.5rem;
+      .hero {
+        padding: 4rem 1.75rem;
+      }
+
+      .hero::before {
+        left: 0.7rem;
+      }
+
+      .hero::after {
+        right: 0.7rem;
       }
 
       .hero .eyebrow {
-        font-size: 0.7rem;
+        font-size: 0.65rem;
         letter-spacing: 0.12em;
       }
 
-      .hero-details {
+      .hero-description {
+        font-size: 1.05rem;
+      }
+
+      .event-ribbon ul {
         flex-direction: column;
-        gap: 0.65rem;
-        margin-top: 2.5rem;
-        font-size: 0.8rem;
+        gap: 0.6rem;
+        font-size: 0.75rem;
       }
 
       .about-grid,
-      .mission-grid,
-      .cards,
-      .info-grid {
+      .mission-grid {
         grid-template-columns: 1fr;
+        gap: 2rem;
       }
 
       .about-copy {
         padding-top: 0;
       }
 
-      .about-heading h2 {
-        margin-bottom: 0;
+      .section-heading {
+        margin-bottom: 2.5rem;
       }
 
-      .card {
-        padding: 1.5rem;
+      .cards {
+        grid-template-columns: 1fr;
+        gap: 2rem;
       }
 
       .card-number {
@@ -504,12 +564,13 @@
       }
 
       .info-grid {
+        grid-template-columns: 1fr;
         gap: 1.5rem;
       }
 
       .info-grid > div + div {
         padding-top: 1.5rem;
-        border-top: 1px solid rgb(197 164 101 / 35%);
+        border-top: 1px solid rgb(194 166 110 / 30%);
       }
 
       .disclaimer {
@@ -524,22 +585,28 @@
   <header>
     <div class="masthead">
       <div class="container masthead-inner">
+        <p class="masthead-note">Motorcycles &amp; practical volunteering</p>
         <div class="wordmark">THE CAUSE</div>
-        <p class="masthead-note">Sussex motorcycle &amp; volunteer club</p>
+        <p class="masthead-note">A Sussex-based club<br>With community at its heart</p>
       </div>
     </div>
 
     <div class="hero">
-      <div class="hero-frame">
-        <p class="eyebrow">Motorcycles · Community · A shared purpose</p>
+      <div class="hero-inner">
+        <p class="eyebrow">The annual family charity &amp; motorcycle festival</p>
         <h1 id="event-name">THE BIG CAUSE</h1>
         <p id="event-tagline">One day. Many ways to help.</p>
         <div class="hero-rule" aria-hidden="true"></div>
         <p class="hero-description">
-          A family charity motorcycle and community festival.
-          Bringing people together in Brighton for a cause that goes beyond the ride.
+          Good company, custom motorcycles and a shared purpose.
+          A day in Brighton for the people and causes that bring us together.
         </p>
-        <ul class="hero-details" aria-label="Event highlights">
+      </div>
+    </div>
+
+    <div class="event-ribbon">
+      <div class="container">
+        <ul aria-label="Event highlights">
           <li><time datetime="2026-10-03">Saturday, 3 October 2026</time></li>
           <li>Madeira Drive, Brighton</li>
           <li>£5 per person</li>
@@ -553,7 +620,7 @@
       <div class="container about-grid">
         <div class="about-heading">
           <p class="eyebrow">About THE BIG CAUSE</p>
-          <h2 id="about-title">Good company.<br>Greater purpose.</h2>
+          <h2 id="about-title">A shared passion.<br>A greater purpose.</h2>
         </div>
         <div class="about-copy">
           <p class="lead">
@@ -575,22 +642,26 @@
 
     <section class="section mission" aria-labelledby="mission-title">
       <div class="container mission-grid">
-        <div>
-          <p class="eyebrow">The club behind the cause</p>
-          <h2 id="mission-title">A love of the ride.<br>A reason to help.</h2>
+        <div class="club-panel">
+          <p class="eyebrow">The club behind the day</p>
+          <h3>THE CAUSE</h3>
           <p>
-            THE CAUSE is a Sussex-based motorcycle and volunteer club,
-            bringing together people interested in custom motorcycles,
+            A Sussex-based motorcycle and volunteer club.
+          </p>
+          <p>
+            Bringing together people interested in custom motorcycles,
             travelling and practical volunteering.
           </p>
+        </div>
+
+        <div class="mission-copy">
+          <p class="eyebrow">Our charity mission</p>
+          <h2 id="mission-title">Care that goes<br>beyond the ride.</h2>
           <p>
-            Community is at the heart of the club, with support reaching
+            Community is at the heart of THE CAUSE, with support reaching
             people, animals and the places we share.
           </p>
-        </div>
-        <div>
-          <h3>What the club supports</h3>
-          <ul class="mission-list">
+          <ul class="mission-list" aria-label="Causes supported by the club">
             <li>Children and adults facing illness or financial difficulty</li>
             <li>Older and vulnerable people</li>
             <li>Animal welfare projects</li>
@@ -602,12 +673,12 @@
 
     <section class="section" aria-labelledby="expect-title">
       <div class="container">
-        <div class="section-intro">
+        <div class="section-heading">
           <p class="eyebrow">What to expect</p>
-          <h2 id="expect-title">Many ways to be part of it.</h2>
+          <h2 id="expect-title">A day with something to share.</h2>
           <p>
-            From craftsmanship on two wheels to time well spent together,
-            the day brings motorcycles and community side by side.
+            Craftsmanship, community and time well spent together.
+            Come for the motorcycles. Be part of the cause.
           </p>
         </div>
 
@@ -656,7 +727,7 @@
         <div class="info-header">
           <div>
             <p class="eyebrow">The event at a glance</p>
-            <h2 id="info-title">One day. Come together.</h2>
+            <h2 id="info-title">One day.<br>All together.</h2>
           </div>
           <p>
             A shared love of motorcycles.<br>
