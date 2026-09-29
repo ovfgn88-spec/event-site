@@ -1022,17 +1022,23 @@ function switchLanguage() {
 HOOKS.push(startCountdown);
 HOOKS.push(showCalendarLink);
 HOOKS.push(showVideo);
+
 HOOKS.push(function () {
   showGallery();
   showAiLabel();
 });
- 
-document.addEventListener("DOMContentLoaded", function () {
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", function () {
+    buildToolbar();
+    loadGallery();
+  });
+} else {
   buildToolbar();
   loadGallery();
-});
-</script>
+}
 
+</script>
   
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
