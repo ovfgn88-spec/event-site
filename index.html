@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173c32">
+  <meta name="description" content="THE BIG CAUSE: a fictional family charity motorcycle and community festival in Brighton. One day. Many ways to help.">
+  <title>THE BIG CAUSE | One day. Many ways to help.</title>
+  <style>
+    :root {
+      --green: #173c32;
+      --green-deep: #102d26;
+      --cream: #f8f3e7;
+      --ivory: #fffdf7;
+      --gold: #c5a465;
+      --ink: #252b27;
+      --sage: #dce3d5;
+      --muted: #526057;
+      --border: #c8cbbb;
+      --serif: Baskerville, "Baskerville Old Face", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+      --sans: "Gill Sans", "Gill Sans MT", "Trebuchet MS", system-ui, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.125rem;
+      line-height: 1.75;
+      font-kerning: normal;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-underline-offset: 0.25em;
+    }
+
+    a:focus-visible {
+      outline: 3px solid currentColor;
+      outline-offset: 6px;
+    }
+
+    .skip-link {
+      position: absolute;
+      z-index: 10;
+      top: 1rem;
+      left: 1rem;
+      padding: 0.7rem 1rem;
+      transform: translateY(-200%);
+      background: var(--cream);
+      color: var(--green-deep);
+      font-weight: 700;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 3rem));
+      margin-inline: auto;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h2,
+    h3 {
+      line-height: 1.12;
+      text-wrap: balance;
+    }
+
+    h2 {
+      margin-bottom: 1.5rem;
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+      font-weight: 400;
+      letter-spacing: -0.025em;
+    }
+
+    h3 {
+      font-family: var(--serif);
+      font-weight: 700;
+    }
+
+    p {
+      margin-bottom: 1.25rem;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    .eyebrow {
+      margin-bottom: 1.25rem;
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.19em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+
+    .masthead {
+      background: var(--cream);
+      color: var(--green);
+      border-bottom: 1px solid var(--gold);
+    }
+
+    .masthead-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem 2rem;
+      padding-block: 1.25rem;
+    }
+
+    .wordmark {
+      font-family: var(--serif);
+      font-size: 1.65rem;
+      font-weight: 700;
+      letter-spacing: 0.055em;
+      line-height: 1.2;
+    }
+
+    .masthead-note {
+      margin: 0;
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-align: right;
+      text-transform: uppercase;
+    }
+
+    .hero {
+      padding: clamp(1rem, 3vw, 2.5rem);
+      background: var(--green);
+      color: var(--cream);
+    }
+
+    .hero-frame {
+      position: relative;
+      max-width: 1400px;
+      margin-inline: auto;
+      padding: clamp(3rem, 7vw, 6.5rem) 1.5rem 2rem;
+      border: 1px solid var(--gold);
+      text-align: center;
+    }
+
+    .hero-frame::before {
+      position: absolute;
+      inset: 6px;
+      border: 1px solid rgb(197 164 101 / 35%);
+      content: "";
+      pointer-events: none;
+    }
+
+    .hero .eyebrow {
+      color: var(--gold);
+    }
+
+    #event-name {
+      max-width: 1000px;
+      margin: 0 auto 1.5rem;
+      font-family: var(--serif);
+      font-size: clamp(3.3rem, 10vw, 8.5rem);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 0.98;
+      text-wrap: balance;
+    }
+
+    #event-tagline {
+      margin-bottom: 2rem;
+      font-family: var(--serif);
+      font-size: clamp(1.55rem, 3vw, 2.4rem);
+      font-style: italic;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      line-height: 1.3;
+    }
+
+    .hero-description {
+      max-width: 580px;
+      margin: 0 auto;
+      color: var(--sage);
+      font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+    }
+
+    .hero-rule {
+      width: 5rem;
+      height: 3px;
+      margin: 2rem auto;
+      background: var(--gold);
+    }
+
+    .hero-details {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem 2rem;
+      margin: 3.5rem 0 0;
+      padding: 1.5rem 0 0;
+      border-top: 1px solid rgb(197 164 101 / 55%);
+      list-style: none;
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      font-variant-numeric: lining-nums;
+    }
+
+    .section {
+      padding-block: clamp(3.5rem, 7vw, 6rem);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+      gap: 2rem 5rem;
+      align-items: start;
+    }
+
+    .about-heading {
+      max-width: 510px;
+      color: var(--green);
+    }
+
+    .about-copy {
+      padding-top: 2.5rem;
+    }
+
+    .lead {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      line-height: 1.55;
+    }
+
+    .mission {
+      background: var(--sage);
+      border-block: 1px solid var(--border);
+    }
+
+    .mission-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 2.5rem 5rem;
+      align-items: start;
+    }
+
+    .mission h2 {
+      color: var(--green);
+    }
+
+    .mission-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid #97a68f;
+    }
+
+    .mission-list li {
+      display: grid;
+      grid-template-columns: 1rem 1fr;
+      gap: 0.75rem;
+      padding-block: 1.15rem;
+      border-bottom: 1px solid #97a68f;
+    }
+
+    .mission-list li::before {
+      margin-top: 0.65rem;
+      width: 0.4rem;
+      height: 0.4rem;
+      background: var(--green);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .section-intro {
+      max-width: 680px;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-intro h2 {
+      color: var(--green);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      padding: 1.8rem 1.5rem 2rem;
+      background: var(--ivory);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--green);
+    }
+
+    .card-number {
+      display: block;
+      margin-bottom: 2rem;
+      color: var(--muted);
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-style: italic;
+      font-variant-numeric: oldstyle-nums;
+    }
+
+    .card h3 {
+      margin-bottom: 1rem;
+      color: var(--green);
+      font-family: var(--serif);
+      font-size: 1.65rem;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+    }
+
+    .card p {
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .event-info {
+      background: var(--green-deep);
+      color: var(--cream);
+    }
+
+    .event-info .eyebrow {
+      color: var(--gold);
+    }
+
+    .info-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 1.5rem 3rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .info-header h2 {
+      margin-bottom: 0;
+    }
+
+    .info-header > p {
+      max-width: 320px;
+      color: var(--sage);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.8fr 1.4fr 0.7fr;
+      gap: 2rem;
+      margin: 0;
+      padding-top: 2rem;
+      border-top: 1px solid var(--gold);
+    }
+
+    .info-grid dt {
+      margin-bottom: 0.8rem;
+      color: var(--gold);
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+
+    .info-grid dd {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 1.55rem;
+      line-height: 1.35;
+      font-variant-numeric: lining-nums;
+    }
+
+    .info-grid .detail {
+      display: block;
+      margin-top: 0.4rem;
+      color: var(--sage);
+      font-family: var(--sans);
+      font-size: 1rem;
+      letter-spacing: 0.025em;
+    }
+
+    footer {
+      padding-block: 2rem;
+      background: var(--cream);
+      color: var(--green);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem 3rem;
+    }
+
+    .footer-brand {
+      flex-shrink: 0;
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .disclaimer {
+      max-width: 500px;
+      margin: 0;
+      font-size: 0.95rem;
+      text-align: right;
+    }
+
+    @media (max-width: 1000px) {
+      .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .about-grid,
+      .mission-grid {
+        column-gap: 2.5rem;
+      }
+
+      .info-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: calc(100% - 2.5rem);
+      }
+
+      .masthead-inner {
+        flex-direction: column;
+        gap: 0.4rem;
+      }
+
+      .masthead-note {
+        font-size: 0.65rem;
+        text-align: center;
+      }
+
+      .hero-frame {
+        padding: 3rem 1rem 1.5rem;
+      }
+
+      .hero .eyebrow {
+        font-size: 0.7rem;
+        letter-spacing: 0.12em;
+      }
+
+      .hero-details {
+        flex-direction: column;
+        gap: 0.65rem;
+        margin-top: 2.5rem;
+        font-size: 0.8rem;
+      }
+
+      .about-grid,
+      .mission-grid,
+      .cards,
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-copy {
+        padding-top: 0;
+      }
+
+      .about-heading h2 {
+        margin-bottom: 0;
+      }
+
+      .card {
+        padding: 1.5rem;
+      }
+
+      .card-number {
+        margin-bottom: 1rem;
+      }
+
+      .info-header,
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .info-header > p {
+        max-width: none;
+      }
+
+      .info-grid {
+        gap: 1.5rem;
+      }
+
+      .info-grid > div + div {
+        padding-top: 1.5rem;
+        border-top: 1px solid rgb(197 164 101 / 35%);
+      }
+
+      .disclaimer {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header>
+    <div class="masthead">
+      <div class="container masthead-inner">
+        <div class="wordmark">THE CAUSE</div>
+        <p class="masthead-note">Sussex motorcycle &amp; volunteer club</p>
+      </div>
+    </div>
+
+    <div class="hero">
+      <div class="hero-frame">
+        <p class="eyebrow">Motorcycles · Community · A shared purpose</p>
+        <h1 id="event-name">THE BIG CAUSE</h1>
+        <p id="event-tagline">One day. Many ways to help.</p>
+        <div class="hero-rule" aria-hidden="true"></div>
+        <p class="hero-description">
+          A family charity motorcycle and community festival.
+          Bringing people together in Brighton for a cause that goes beyond the ride.
+        </p>
+        <ul class="hero-details" aria-label="Event highlights">
+          <li><time datetime="2026-10-03">Saturday, 3 October 2026</time></li>
+          <li>Madeira Drive, Brighton</li>
+          <li>£5 per person</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="section" aria-labelledby="about-title">
+      <div class="container about-grid">
+        <div class="about-heading">
+          <p class="eyebrow">About THE BIG CAUSE</p>
+          <h2 id="about-title">Good company.<br>Greater purpose.</h2>
+        </div>
+        <div class="about-copy">
+          <p class="lead">
+            THE BIG CAUSE is an annual family charity motorcycle and community
+            festival, bringing people together through a shared wish to help.
+          </p>
+          <p>
+            Discover custom motorcycles, enjoy live entertainment, explore food
+            and local makers, and spend time with family and friends.
+          </p>
+          <p>
+            Whether you ride, volunteer or simply want to join in, there is a
+            welcome here for families, neighbours and visitors from Sussex,
+            London and across England.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section mission" aria-labelledby="mission-title">
+      <div class="container mission-grid">
+        <div>
+          <p class="eyebrow">The club behind the cause</p>
+          <h2 id="mission-title">A love of the ride.<br>A reason to help.</h2>
+          <p>
+            THE CAUSE is a Sussex-based motorcycle and volunteer club,
+            bringing together people interested in custom motorcycles,
+            travelling and practical volunteering.
+          </p>
+          <p>
+            Community is at the heart of the club, with support reaching
+            people, animals and the places we share.
+          </p>
+        </div>
+        <div>
+          <h3>What the club supports</h3>
+          <ul class="mission-list">
+            <li>Children and adults facing illness or financial difficulty</li>
+            <li>Older and vulnerable people</li>
+            <li>Animal welfare projects</li>
+            <li>Community and environmental projects</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="expect-title">
+      <div class="container">
+        <div class="section-intro">
+          <p class="eyebrow">What to expect</p>
+          <h2 id="expect-title">Many ways to be part of it.</h2>
+          <p>
+            From craftsmanship on two wheels to time well spent together,
+            the day brings motorcycles and community side by side.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <span class="card-number" aria-hidden="true">01</span>
+            <h3>Custom Bikes</h3>
+            <p>
+              Take a closer look at custom motorcycles and the creativity,
+              care and craftsmanship behind them.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="card-number" aria-hidden="true">02</span>
+            <h3>Motorcycle Activities</h3>
+            <p>
+              Enjoy motorcycle activities and share an interest in bikes,
+              travelling and life on two wheels.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="card-number" aria-hidden="true">03</span>
+            <h3>Charity &amp; Volunteering</h3>
+            <p>
+              Discover the club’s mission, get involved in fundraising
+              and explore the value of practical volunteering.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="card-number" aria-hidden="true">04</span>
+            <h3>Family &amp; Community</h3>
+            <p>
+              Make time for live entertainment, food, local makers and
+              family activities in a welcoming community atmosphere.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section event-info" aria-labelledby="info-title">
+      <div class="container">
+        <div class="info-header">
+          <div>
+            <p class="eyebrow">The event at a glance</p>
+            <h2 id="info-title">One day. Come together.</h2>
+          </div>
+          <p>
+            A shared love of motorcycles.<br>
+            A shared commitment to community.
+          </p>
+        </div>
+
+        <dl class="info-grid">
+          <div>
+            <dt>Date</dt>
+            <dd>
+              <time datetime="2026-10-03">3 October 2026</time>
+              <span class="detail">Saturday</span>
+            </dd>
+          </div>
+          <div>
+            <dt>Time</dt>
+            <dd>
+              <time datetime="10:00">10:00</time>–<time datetime="18:00">18:00</time>
+            </dd>
+          </div>
+          <div>
+            <dt>Location</dt>
+            <dd>
+              Madeira Drive
+              <span class="detail">Brighton, Sussex</span>
+            </dd>
+          </div>
+          <div>
+            <dt>Ticket</dt>
+            <dd>
+              £5
+              <span class="detail">Per person</span>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-brand">THE BIG CAUSE</div>
+      <p class="disclaimer">
+        A made-up event for a learning project. Nothing here is real.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
