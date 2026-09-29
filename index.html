@@ -944,9 +944,12 @@ function loadGallery() {
     })
     .then(function (g) {
       GALLERY = (g && g.items) || [];
+      console.log("Gallery data:", g);
       showGallery();
     })
-    .catch(function () {});
+    .catch(function (err) {
+  console.error("Gallery error:", err);
+});
 }
  
 // ---------- The "made with AI" label ----------
