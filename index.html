@@ -808,6 +808,9 @@ TEXT.en.contrast = "High contrast";
  
 // Your second language goes here in Block 6 of Day 2.
 TEXT.ru = {
+  "about-title": "О мероприятии",
+"about-text": "THE BIG CAUSE — это семейный благотворительный мотофестиваль, организованный THE CAUSE.",
+"about-title": "О событии",
   when: "Когда",
   where: "Где",
   placesLeft: "Осталось мест: {n} из {total}",
@@ -1100,13 +1103,11 @@ if (document.readyState === "loading") {
       <div class="container about-grid">
         <div class="about-heading">
           <p class="eyebrow">About THE BIG CAUSE</p>
-          <h2 id="about-title">A shared passion.<br>A greater purpose.</h2>
-        </div>
-        <div class="about-copy">
-          <p class="lead">
-            THE BIG CAUSE is an annual family charity motorcycle and community
-            festival, bringing people together through a shared wish to help.
-          </p>
+          <h2 data-i18n="about-title">About this event</h2>
+
+<p data-i18n="about-text">
+  THE BIG CAUSE is a family charity motorcycle and community festival organised by THE CAUSE.
+</p>
           <p>
             Discover custom motorcycles, enjoy live entertainment, explore food
             and local makers, and spend time with family and friends.
