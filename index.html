@@ -1027,8 +1027,10 @@ HOOKS.push(function () {
   showAiLabel();
 });
  
-buildToolbar();
-loadGallery();
+document.addEventListener("DOMContentLoaded", function () {
+  buildToolbar();
+  loadGallery();
+});
 </script>
 
   
