@@ -577,7 +577,622 @@
         text-align: left;
       }
     }
-  </style>
+  
+    /* PREMIUM EDITORIAL REDESIGN */
+    :root{--green:#17392f;--deep-green:#10271f;--forest:#0d2a21;--cream:#f4efe4;--ivory:#fbf8f1;--paper:#efe7d8;--brass:#b5985e;--brass-dark:#8c7448;--ink:#1d2924;--muted:#667068;--sage:#dfe5da;--line:#c9c0af;--serif:Baskerville,"Baskerville Old Face","Palatino Linotype",Georgia,serif;--sans:"Gill Sans","Gill Sans MT","Trebuchet MS",system-ui,sans-serif;}
+    html{scroll-behavior:smooth;background:var(--cream);}
+    body{background:var(--cream);color:var(--ink);letter-spacing:.003em;}
+    .container{width:min(1240px,calc(100% - 4rem));}
+    h2{font-size:clamp(2.7rem,5vw,5.2rem);line-height:.98;letter-spacing:-.045em;}
+    .eyebrow{color:var(--brass-dark);font-size:.72rem;letter-spacing:.22em;}
+    .masthead{position:relative;border-bottom:1px solid var(--line);background:rgba(251,248,241,.98);}
+    .masthead::before{content:"";display:block;height:4px;background:var(--green);}
+    .masthead-inner{min-height:132px;padding-block:1.8rem;}
+    .masthead-note{color:#556159;font-size:.66rem;letter-spacing:.18em;}
+    .wordmark{position:relative;font-size:clamp(2rem,3vw,2.7rem);font-weight:600;letter-spacing:.12em;}
+    .wordmark::after{content:"";display:block;width:42px;height:1px;margin:.8rem auto 0;background:var(--brass);}
+    .hero{min-height:68vh;display:grid;place-items:center;padding:clamp(6rem,10vw,10rem) 2rem;background:radial-gradient(circle at 50% 0%,rgba(194,166,110,.13),transparent 34%),linear-gradient(135deg,#193b31 0%,#102b23 55%,#0c211a 100%);text-align:left;}
+    .hero::before,.hero::after{top:3rem;bottom:3rem;background:rgba(194,166,110,.3);}
+    .hero-inner{width:min(1080px,100%);margin-inline:auto;text-align:left;}
+    .hero .eyebrow{margin-bottom:2.2rem;color:#d7c08d;}
+    #event-name{max-width:920px;margin-bottom:1.4rem;font-size:clamp(4.3rem,10vw,9.2rem);font-weight:400;letter-spacing:-.015em;line-height:.84;text-transform:uppercase;}
+    #event-tagline{margin-bottom:0;color:#f2ead9;font-size:clamp(1.5rem,2.5vw,2.4rem);font-style:normal;letter-spacing:.01em;}
+    .hero-rule{width:min(540px,68vw);margin:2.3rem 0 2rem;background:rgba(194,166,110,.7);}
+    .hero-description{max-width:620px;margin-inline:0;color:#d6ddd6;font-size:1.08rem;line-height:1.85;}
+    .event-ribbon{padding-block:1.15rem;background:#e9dfcb;border-bottom:1px solid #d2c6af;}
+    .event-ribbon ul{justify-content:space-between;gap:1rem 2rem;font-size:.73rem;letter-spacing:.16em;}
+    .section{padding-block:clamp(5.5rem,9vw,8.5rem);}
+    .about-grid{grid-template-columns:.85fr 1.15fr;gap:4rem 8rem;border-top:1px solid var(--line);padding-top:2.4rem;}
+    .about-heading{position:sticky;top:2rem;}
+    .about-copy{padding-top:0;}
+    .about-grid p[data-i18n="about-text"]{font-family:var(--serif);font-size:clamp(1.45rem,2.2vw,1.9rem);line-height:1.45;}
+    .mission{background:linear-gradient(180deg,rgba(255,255,255,.18),rgba(255,255,255,0)),var(--sage);border-top:1px solid #c4ccbf;border-bottom:1px solid #c4ccbf;}
+    .mission-grid{grid-template-columns:.75fr 1.25fr;gap:4rem 7rem;}
+    .club-panel{padding:clamp(2.4rem,4vw,4rem);border:1px solid #8e9b8e;outline:none;background:rgba(251,248,241,.52);box-shadow:inset 0 0 0 8px rgba(255,255,255,.18);text-align:left;}
+    .club-panel h3{font-size:clamp(2.5rem,4vw,3.7rem);}
+    .section-heading{max-width:850px;margin-bottom:4.5rem;}
+    .cards{gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+    .card{min-height:340px;padding:2rem 2rem 2.5rem;border-top:0;border-right:1px solid var(--line);background:rgba(251,248,241,.32);}
+    .card:last-child{border-right:0;}
+    .card-number{margin-bottom:4.5rem;color:var(--brass-dark);font-size:.82rem;letter-spacing:.08em;}
+    .card p{color:#4f5b54;font-size:.98rem;}
+    .event-info{position:relative;overflow:hidden;background:radial-gradient(circle at 80% 15%,rgba(181,152,94,.12),transparent 26%),var(--deep-green);}
+    .event-info::after{content:"THE BIG CAUSE";position:absolute;right:-1rem;bottom:-1.7rem;color:rgba(255,255,255,.035);font-family:var(--serif);font-size:clamp(5rem,13vw,11rem);letter-spacing:.03em;white-space:nowrap;pointer-events:none;}
+    .info-grid{position:relative;z-index:1;gap:0;border-top:1px solid rgba(194,166,110,.55);border-bottom:1px solid rgba(194,166,110,.25);}
+    .info-grid>div{min-height:180px;padding:2rem 2rem 2.2rem 0;border-right:1px solid rgba(194,166,110,.24);}
+    .info-grid>div+div{padding-left:2rem;}
+    .info-grid>div:last-child{border-right:0;}
+    main .live-section{width:min(1120px,calc(100% - 4rem));max-width:none;margin:0 auto 1.4rem;padding:clamp(2.2rem,4vw,4rem)!important;border:1px solid var(--line)!important;border-radius:0!important;background:rgba(251,248,241,.76)!important;color:var(--ink)!important;box-shadow:none;}
+    main .live-section h2{margin-bottom:2rem;color:var(--green);font-size:clamp(2.2rem,3.6vw,3.7rem)!important;font-weight:400;}
+    #event-facts{margin-top:5rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem 3rem;border-top:4px solid var(--green)!important;}
+    #event-facts p{margin:0;}
+    #event-facts p strong{display:block;margin-bottom:.45rem;color:var(--brass-dark);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;}
+    #event-facts .places{font-family:var(--serif);font-size:1.5rem;color:var(--green);}
+    #countdown{padding-block:1.8rem!important;background:var(--green)!important;border-color:var(--green)!important;color:var(--cream)!important;font-family:var(--serif);font-size:clamp(1.4rem,2vw,2rem);text-align:center;}
+    #promo-video video,#promo-video iframe{display:block;width:100%;aspect-ratio:16/9;background:#0c1713;border:0;border-radius:0!important;}
+    main .gallery-grid{grid-template-columns:repeat(12,1fr)!important;gap:1rem!important;}
+    main .gallery-grid figure{margin:0;grid-column:span 4;background:#eee6d8;}
+    main .gallery-grid figure:first-child{grid-column:span 8;grid-row:span 2;}
+    main .gallery-grid img{display:block;width:100%!important;height:100%!important;min-height:280px;object-fit:cover;border-radius:0!important;filter:saturate(.9) contrast(1.02);}
+    main .gallery-grid figure:first-child img{min-height:580px;}
+    main .gallery-grid figcaption{padding:.85rem 1rem 1rem;color:#5d665f;font-size:.82rem!important;line-height:1.5;}
+    #schedule ul{margin:0;padding:0;list-style:none;border-top:1px solid var(--line);}
+    #schedule li{display:grid;grid-template-columns:120px 1fr;gap:1.5rem;padding:1rem 0;border-bottom:1px solid var(--line);}
+    #schedule li strong{color:var(--green);font-family:var(--serif);font-size:1.15rem;}
+    #signup{background:linear-gradient(135deg,rgba(255,255,255,.3),rgba(255,255,255,0)),#e7ded0!important;border-color:#c7b99e!important;}
+    #signup form{max-width:760px;}
+    #signup input,#signup textarea,#ask-input{width:100%!important;padding:.95rem 1rem!important;border:1px solid #aeb6ad;border-radius:0;background:rgba(255,255,255,.72);color:var(--ink);font:inherit;}
+    #signup button,#ask-button,#a11y-bar button,#calendar-link{appearance:none;display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:.75rem 1.15rem;border:1px solid var(--green);border-radius:0;background:var(--green);color:var(--ivory);font-family:var(--sans);font-size:.78rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;text-decoration:none;cursor:pointer;}
+    #ask{background:var(--deep-green)!important;border-color:var(--deep-green)!important;color:var(--cream)!important;}
+    #ask h2{color:var(--cream)!important;}
+    #ask-input{background:#f7f2e9;}
+    #ask-button{margin-top:.8rem;border-color:var(--brass);background:var(--brass);color:#18211c;}
+    #ask-answer{margin-top:1.3rem;padding-top:1.1rem;border-top:1px solid rgba(255,255,255,.18);font-family:var(--serif);font-size:1.2rem;}
+    #ask p:last-child{color:#c9d1cb;font-size:.84rem;}
+    #faq details{margin:0!important;border-top:1px solid var(--line);}
+    #faq details:last-child{border-bottom:1px solid var(--line);}
+    #faq summary{padding:1.15rem 0;color:var(--green);font-family:var(--serif);font-size:1.2rem;font-weight:400!important;}
+    #faq details p{max-width:760px;padding:0 0 1.3rem;color:#536057;}
+    #ai-label{padding:1rem 1.2rem!important;border:0!important;background:transparent!important;color:var(--muted)!important;font-size:.78rem;text-align:center;}
+    body #a11y-bar{position:sticky;top:0;z-index:50;justify-content:center!important;gap:0!important;padding:0!important;border-bottom:1px solid #d4cab9!important;background:rgba(246,242,233,.96)!important;backdrop-filter:blur(12px);}
+    body #a11y-bar button{min-height:40px;padding:.6rem 1rem!important;border-width:0 1px 0 0;border-color:#d4cab9;background:transparent;color:var(--green);font-size:.67rem!important;letter-spacing:.08em;}
+    body #a11y-bar button:hover{background:#e9dfcb;color:var(--green);}
+    #announcement{border-bottom:1px solid #b88f31!important;background:#dfc780!important;color:#253128!important;font-family:var(--serif);font-size:1.05rem;font-weight:400!important;}
+    footer{margin-top:5rem;padding-block:3rem;border-top:1px solid var(--line);background:#ece4d6;}
+    @media(max-width:1000px){.container,main .live-section{width:min(100% - 2.5rem,920px)}.about-heading{position:static}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.card:nth-child(2){border-right:0}.card:nth-child(-n+2){border-bottom:1px solid var(--line)}#event-facts{grid-template-columns:1fr 1fr}main .gallery-grid figure,main .gallery-grid figure:first-child{grid-column:span 6;grid-row:auto}main .gallery-grid figure:first-child img{min-height:360px}}
+    @media(max-width:680px){.container,main .live-section{width:calc(100% - 2rem)}.hero{min-height:auto;padding:5.5rem 1.5rem 5rem}#event-name{font-size:clamp(3.6rem,18vw,5.7rem)}.event-ribbon ul{align-items:flex-start;text-align:left}.cards{grid-template-columns:1fr}.card,.card:nth-child(2){min-height:auto;border-right:0;border-bottom:1px solid var(--line)}.card-number{margin-bottom:2rem}.info-grid>div,.info-grid>div+div{min-height:auto;padding:1.4rem 0!important;border-right:0;border-bottom:1px solid rgba(194,166,110,.22)}#event-facts{grid-template-columns:1fr}main .gallery-grid{grid-template-columns:1fr!important}main .gallery-grid figure,main .gallery-grid figure:first-child{grid-column:1}main .gallery-grid img,main .gallery-grid figure:first-child img{min-height:260px;max-height:420px}#schedule li{grid-template-columns:1fr;gap:.25rem}body #a11y-bar{position:relative}body #a11y-bar button{flex:1 1 50%;border-bottom:1px solid #d4cab9}}
+
+  
+/* ---------- Editorial top photo strip ---------- */
+.top-photos {
+  padding: 2rem 0 1rem;
+  background: var(--cream);
+}
+
+.top-photos-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.top-photo {
+  margin: 0;
+  overflow: hidden;
+  background: #e7dfd1;
+}
+
+.top-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  object-fit: cover;
+  filter: saturate(0.92) contrast(1.02);
+}
+
+.top-photo-large img {
+  min-height: 420px;
+}
+
+@media (max-width: 900px) {
+  .top-photos-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .top-photo-large {
+    grid-column: 1 / -1;
+  }
+
+  .top-photo-large img {
+    min-height: 320px;
+  }
+}
+
+@media (max-width: 680px) {
+  .top-photos {
+    padding-top: 1rem;
+  }
+
+  .top-photos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .top-photo-large,
+  .top-photo {
+    grid-column: auto;
+  }
+
+  .top-photo img,
+  .top-photo-large img {
+    min-height: 240px;
+  }
+}
+
+
+/* ---------- Finished editorial About section ---------- */
+.about-section {
+  position: relative;
+}
+
+.about-section::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--line), transparent);
+}
+
+.about-grid {
+  align-items: stretch;
+}
+
+.about-heading {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding-right: clamp(1rem, 3vw, 3rem);
+}
+
+.about-heading h2 {
+  max-width: 520px;
+}
+
+.about-heading-rule {
+  width: 72px;
+  height: 1px;
+  margin: 2rem 0 1.35rem;
+  background: var(--brass);
+}
+
+.about-signature {
+  margin-top: auto;
+  padding-top: 2rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.about-copy {
+  position: relative;
+  max-width: 700px;
+  padding: 0 0 0 clamp(1rem, 3vw, 3.5rem);
+  border-left: 1px solid var(--line);
+}
+
+.about-copy .lead {
+  margin-bottom: 1.75rem;
+  color: var(--green);
+}
+
+.about-copy > p:not(.lead) {
+  max-width: 620px;
+  color: #4f5b54;
+}
+
+.about-quote {
+  position: relative;
+  margin: 3rem 0 0;
+  padding: 2rem 0 0 2.2rem;
+  border-top: 1px solid var(--line);
+  color: var(--green);
+}
+
+.about-quote > span {
+  position: absolute;
+  left: 0;
+  top: 1.25rem;
+  color: var(--brass);
+  font-family: var(--serif);
+  font-size: 4.2rem;
+  line-height: 1;
+}
+
+.about-quote p {
+  max-width: 520px;
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(1.55rem, 2.4vw, 2.1rem);
+  font-style: italic;
+  line-height: 1.35;
+}
+
+@media (max-width: 680px) {
+  .about-heading {
+    padding-right: 0;
+  }
+
+  .about-signature {
+    margin-top: 0;
+    padding-top: 0.5rem;
+  }
+
+  .about-copy {
+    padding-left: 0;
+    padding-top: 2rem;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .about-quote {
+    margin-top: 2.5rem;
+  }
+}
+
+
+/* ---------- About section v4: complete editorial composition ---------- */
+.about-section {
+  padding-block: clamp(4.5rem, 7vw, 7rem);
+}
+
+.about-section::before {
+  display: none;
+}
+
+.about-editorial {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: clamp(3.5rem, 7vw, 8rem);
+  align-items: start;
+}
+
+.about-left {
+  min-width: 0;
+}
+
+.about-left .eyebrow {
+  margin-bottom: 1.5rem;
+}
+
+.about-left h2 {
+  max-width: 600px;
+  margin-bottom: 2.4rem;
+  color: var(--green);
+}
+
+.about-photo {
+  margin: 0;
+  width: min(100%, 560px);
+  background: #ddd5c8;
+}
+
+.about-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  filter: saturate(0.88) contrast(1.03);
+}
+
+.about-photo figcaption {
+  padding-top: 0.8rem;
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.about-copy {
+  max-width: 760px;
+  padding: 0;
+  border-left: 0;
+}
+
+.about-copy .lead {
+  max-width: 720px;
+  margin-bottom: 2rem;
+  color: var(--green);
+  font-size: clamp(1.65rem, 2.4vw, 2.25rem);
+  line-height: 1.4;
+}
+
+.about-rule {
+  width: 100%;
+  height: 1px;
+  margin: 0 0 2rem;
+  background: var(--line);
+}
+
+.about-copy > p:not(.lead):not(.about-closing) {
+  max-width: 680px;
+  color: #525e56;
+  font-size: 1.04rem;
+  line-height: 1.8;
+}
+
+.about-quote {
+  margin: 2.6rem 0 1.6rem;
+  padding: 2rem 0 0 2.6rem;
+  border-top: 1px solid var(--line);
+}
+
+.about-quote > span {
+  top: 1.15rem;
+}
+
+.about-quote p {
+  max-width: 620px;
+  font-size: clamp(1.45rem, 2.1vw, 1.9rem);
+}
+
+.about-closing {
+  margin-top: 1.8rem;
+  color: var(--brass-dark);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .about-editorial {
+    grid-template-columns: 1fr;
+    gap: 2.8rem;
+  }
+
+  .about-photo {
+    width: 100%;
+  }
+
+  .about-photo img {
+    aspect-ratio: 16 / 9;
+  }
+
+  .about-copy {
+    max-width: none;
+  }
+}
+
+@media (max-width: 680px) {
+  .about-section {
+    padding-block: 3.8rem;
+  }
+
+  .about-left h2 {
+    margin-bottom: 1.8rem;
+  }
+
+  .about-photo img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .about-copy {
+    padding-top: 0;
+    border-top: 0;
+  }
+}
+
+
+/* ---------- Balanced quotation marks ---------- */
+.about-quote {
+  padding-right: 3rem;
+}
+
+.about-quote .quote-open {
+  position: absolute;
+  left: 0;
+  top: 1.15rem;
+  color: var(--brass);
+  font-family: var(--serif);
+  font-size: 4.2rem;
+  line-height: 1;
+}
+
+.about-quote .quote-close {
+  position: absolute;
+  right: 0;
+  bottom: -0.15rem;
+  color: var(--brass);
+  font-family: var(--serif);
+  font-size: 4.2rem;
+  line-height: 1;
+}
+
+@media (max-width: 680px) {
+  .about-quote {
+    padding-right: 2.4rem;
+  }
+
+  .about-quote .quote-open,
+  .about-quote .quote-close {
+    font-size: 3.4rem;
+  }
+}
+
+
+/* ---------- About section v6: lower right-column composition ---------- */
+@media (min-width: 901px) {
+  .about-copy {
+    padding-top: 3.8rem;
+  }
+
+  .about-quote {
+    margin-top: 4.6rem;
+  }
+
+  .about-closing {
+    margin-top: 2.2rem;
+  }
+}
+
+
+/* ---------- About section v7: align copy with photo + correct quote marks ---------- */
+@media (min-width: 901px) {
+  .about-editorial {
+    display: grid;
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+    grid-template-rows: auto auto;
+    column-gap: clamp(3.5rem, 7vw, 8rem);
+    row-gap: 2.4rem;
+    align-items: start;
+  }
+
+  .about-heading-block {
+    grid-column: 1;
+    grid-row: 1;
+    min-width: 0;
+  }
+
+  .about-heading-block .eyebrow {
+    margin-bottom: 1.5rem;
+  }
+
+  .about-heading-block h2 {
+    max-width: 600px;
+    margin-bottom: 0;
+    color: var(--green);
+  }
+
+  .about-photo {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: start;
+    margin: 0;
+    width: min(100%, 560px);
+  }
+
+  .about-copy {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: start;
+    max-width: 760px;
+    padding: 0 !important;
+    border-left: 0;
+  }
+
+  .about-copy .lead {
+    margin-top: -0.15rem;
+  }
+}
+
+/* Quote marks sit directly around the quotation text. */
+.about-quote {
+  position: static;
+  margin: 2.6rem 0 1.6rem;
+  padding: 2rem 0 0;
+  border-top: 1px solid var(--line);
+}
+
+.about-quote p {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.22em;
+  max-width: 680px;
+  margin: 0;
+  color: var(--green);
+  font-family: var(--serif);
+  font-size: clamp(1.45rem, 2.1vw, 1.9rem);
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.about-quote .quote-mark,
+.about-quote .quote-open,
+.about-quote .quote-close {
+  position: static !important;
+  display: inline;
+  flex: 0 0 auto;
+  color: var(--brass);
+  font-family: var(--serif);
+  font-size: 1.65em;
+  font-style: normal;
+  line-height: 0.78;
+  transform: none !important;
+}
+
+@media (max-width: 900px) {
+  .about-editorial {
+    display: block;
+  }
+
+  .about-heading-block h2 {
+    margin-bottom: 2rem;
+  }
+
+  .about-photo {
+    width: 100%;
+    margin: 0 0 2.8rem;
+  }
+
+  .about-copy {
+    padding: 0;
+  }
+}
+
+@media (max-width: 680px) {
+  .about-quote p {
+    gap: 0.15em;
+  }
+
+  .about-quote .quote-mark {
+    font-size: 1.45em;
+  }
+}
+
+
+
+/* --- Added club + event logos --- */
+.brand-mark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.brand-mark img {
+  display: block;
+  width: min(340px, 30vw);
+  min-width: 180px;
+  max-width: 340px;
+  height: auto;
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,.08));
+}
+
+.hero-event-logo {
+  margin: 0 0 1.5rem;
+}
+
+.hero-event-logo img {
+  display: block;
+  width: min(300px, 42vw);
+  max-width: 300px;
+  height: auto;
+  filter: drop-shadow(0 8px 24px rgba(0,0,0,.12));
+}
+
+@media (max-width: 900px) {
+  .brand-mark img {
+    width: min(260px, 58vw);
+    min-width: 0;
+  }
+  .hero-event-logo img {
+    width: min(230px, 62vw);
+  }
+}
+
+</style>
 </head>
 
   <script>
@@ -808,9 +1423,9 @@ TEXT.en.contrast = "High contrast";
  
 // Your second language goes here in Block 6 of Day 2.
 TEXT.ru = {
-  "about-title": "О мероприятии",
-"about-text": "THE BIG CAUSE — это семейный благотворительный мотофестиваль, организованный THE CAUSE.",
-"about-title": "О событии",
+  "about-title": "Больше, чем день на двух колёсах.",
+  "about-text": "THE BIG CAUSE — это семейный благотворительный мотофестиваль, организованный THE CAUSE.",
+  "about-quote": "Мотоцикл помогает нам добраться туда. Но главное — наша общая цель.",
   when: "Когда",
   where: "Где",
   placesLeft: "Осталось мест: {n} из {total}",
@@ -843,6 +1458,52 @@ TEXT.ru = {
   thinking: "Думаю...",
   aiNote: "Этот ответ создан ИИ, который использует только информацию из раздела FAQ. Он может ошибаться. Пожалуйста, уточняйте важную информацию у организатора.",
   wait: "Пожалуйста, подождите несколько секунд, прежде чем задать следующий вопрос."
+  ,
+  mastheadLeft: "Мотоциклы и практическое волонтёрство",
+  mastheadRight: "Клуб из Сассекса, в основе которого — сообщество",
+  heroEyebrow: "Ежегодный семейный благотворительный мотофестиваль",
+  heroDescription: "Хорошая компания, кастомные мотоциклы и общая цель. День в Брайтоне ради людей и проектов, которые объединяют нас.",
+  ribbonDate: "Суббота, 3 октября 2026",
+  ribbonLocation: "Мадейра Драйв, Брайтон",
+  ribbonPrice: "£5 с человека",
+  aboutEyebrow: "О THE BIG CAUSE",
+  aboutSignature: "Мотоциклы · Благотворительность · Сообщество",
+  aboutPhotoCaption: "Брайтонское побережье · мотоциклы · сообщество",
+  aboutClosing: "Общий день с практической целью.",
+  aboutBody2: "Познакомьтесь с кастомными мотоциклами, послушайте живую музыку, попробуйте еду, посетите местных мастеров и проведите время с семьёй и друзьями.",
+  aboutBody3: "Неважно, ездите ли вы на мотоцикле, занимаетесь волонтёрством или просто хотите присоединиться — здесь рады семьям, соседям и гостям из Сассекса, Лондона и других уголков Англии.",
+  clubEyebrow: "Клуб, стоящий за этим событием",
+  clubDescription1: "Мотоциклетный и волонтёрский клуб из Сассекса.",
+  clubDescription2: "Он объединяет людей, которым интересны кастомные мотоциклы, путешествия и практическое волонтёрство.",
+  missionEyebrow: "Наша благотворительная миссия",
+  missionTitle: "Забота, которая выходит за рамки поездки.",
+  missionIntro: "Сообщество находится в центре THE CAUSE, а наша поддержка направлена людям, животным и местам, которые мы разделяем.",
+  mission1: "Дети и взрослые, столкнувшиеся с болезнью или финансовыми трудностями",
+  mission2: "Пожилые и уязвимые люди",
+  mission3: "Проекты по защите животных",
+  mission4: "Общественные и экологические проекты",
+  expectEyebrow: "Что вас ждёт",
+  expectTitle: "День, которым хочется поделиться.",
+  expectIntro: "Мастерство, сообщество и время, проведённое вместе. Приходите ради мотоциклов. Станьте частью общего дела.",
+  card1Title: "Кастомные мотоциклы",
+  card1Text: "Рассмотрите кастомные мотоциклы поближе и оцените творческий подход, внимание к деталям и мастерство, стоящие за ними.",
+  card2Title: "Мотоактивности",
+  card2Text: "Посмотрите мотоактивности и разделите интерес к мотоциклам, путешествиям и жизни на двух колёсах.",
+  card3Title: "Благотворительность и волонтёрство",
+  card3Text: "Узнайте больше о миссии клуба, присоединитесь к сбору средств и познакомьтесь с возможностями практического волонтёрства.",
+  card4Title: "Семья и сообщество",
+  card4Text: "Наслаждайтесь живой программой, едой, местными мастерами и семейными активностями в дружелюбной атмосфере.",
+  infoEyebrow: "Коротко о событии",
+  infoTitle: "Один день. Все вместе.",
+  infoIntro: "Общая любовь к мотоциклам. Общая ответственность перед сообществом.",
+  infoDate: "Дата",
+  infoSaturday: "Суббота",
+  infoTime: "Время",
+  infoLocation: "Место",
+  infoTicket: "Билет",
+  infoPerPerson: "С человека",
+  footerDisclaimer: "Вымышленное мероприятие для учебного проекта. Ничего из этого не является реальным."
+
 };
  
 var GALLERY = [];
@@ -1083,54 +1744,95 @@ if (document.readyState === "loading") {
   <header>
     <div class="masthead">
       <div class="container masthead-inner">
-        <p class="masthead-note">Motorcycles &amp; practical volunteering</p>
-        <div class="wordmark">THE CAUSE</div>
-        <p class="masthead-note">A Sussex-based club<br>With community at its heart</p>
+        <p class="masthead-note" data-i18n="mastheadLeft">Motorcycles &amp; practical volunteering</p>
+        <div class="brand-mark"><img src="the-cause-club-logo.png" alt="The Cause Motorcycle & Charity Club logo"></div>
+        <p class="masthead-note" data-i18n="mastheadRight">A Sussex-based club with community at its heart</p>
       </div>
     </div>
 
     <div class="hero">
       <div class="hero-inner">
-        <p class="eyebrow">The annual family charity &amp; motorcycle festival</p>
+        <div class="hero-event-logo">
+          <img src="the-big-cause-event-logo.png" alt="The Big Cause event logo">
+        </div>
+        <p class="eyebrow" data-i18n="heroEyebrow">The annual family charity &amp; motorcycle festival</p>
         <h1 id="event-name">THE BIG CAUSE</h1>
         <p id="event-tagline">One day. Many ways to help.</p>
         <div class="hero-rule" aria-hidden="true"></div>
-        <p class="hero-description">
-          Good company, custom motorcycles and a shared purpose.
-          A day in Brighton for the people and causes that bring us together.
-        </p>
+        <p class="hero-description" data-i18n="heroDescription">Good company, custom motorcycles and a shared purpose. A day in Brighton for the people and causes that bring us together.</p>
       </div>
     </div>
 
     <div class="event-ribbon">
       <div class="container">
         <ul aria-label="Event highlights">
-          <li><time datetime="2026-10-03">Saturday, 3 October 2026</time></li>
-          <li>Madeira Drive, Brighton</li>
-          <li>£5 per person</li>
+          <li><time datetime="2026-10-03" data-i18n="ribbonDate">Saturday, 3 October 2026</time></li>
+          <li data-i18n="ribbonLocation">Madeira Drive, Brighton</li>
+          <li data-i18n="ribbonPrice">£5 per person</li>
         </ul>
       </div>
     </div>
   </header>
 
-  <main id="main-content">
-    <section class="section" aria-labelledby="about-title">
-      <div class="container about-grid">
-        <div class="about-heading">
-          <p class="eyebrow">About THE BIG CAUSE</p>
-          <h2 data-i18n="about-title">About this event</h2>
+  <section class="top-photos" aria-label="Event highlights">
+    <div class="container">
+      <div class="top-photos-grid">
+        <figure class="top-photo top-photo-large">
+          <img src="hero.jpg" alt="Custom motorcycles, adults and volunteers gathered on Brighton seafront for The Big Cause.">
+        </figure>
 
-<p data-i18n="about-text">
-  THE BIG CAUSE is a family charity motorcycle and community festival organised by THE CAUSE.
-</p>
-          <p>
-            Discover custom motorcycles, enjoy live entertainment, explore food
-            and local makers, and spend time with family and friends.
+        <figure class="top-photo">
+          <img src="scene1.jpg" alt="Adults supporting charity activities on Brighton seafront beside custom motorcycles.">
+        </figure>
+
+        <figure class="top-photo">
+          <img src="scene2.jpg" alt="Motorcycle activity and spectators on Madeira Drive during The Big Cause.">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+
+  <main id="main-content">
+    <section class="section about-section" aria-labelledby="about-title">
+      <div class="container about-editorial">
+        <div class="about-heading-block">
+          <p class="eyebrow" data-i18n="aboutEyebrow">About THE BIG CAUSE</p>
+          <h2 id="about-title" data-i18n="about-title">More than a day on two wheels.</h2>
+        </div>
+
+        <figure class="about-photo">
+          <img src="scene3.jpg" alt="Adults enjoying the community atmosphere of The Big Cause on Brighton seafront.">
+          <figcaption data-i18n="aboutPhotoCaption">Brighton seafront · motorcycles · community</figcaption>
+        </figure>
+
+        <div class="about-copy">
+          <p class="lead" data-i18n="about-text">
+            THE BIG CAUSE is a family charity motorcycle and community festival organised by THE CAUSE.
           </p>
-          <p>
-            Whether you ride, volunteer or simply want to join in, there is a
-            welcome here for families, neighbours and visitors from Sussex,
-            London and across England.
+
+          <div class="about-rule" aria-hidden="true"></div>
+
+          <p data-i18n="aboutBody2">
+            Discover custom motorcycles, enjoy live entertainment, explore food and local makers,
+            and spend time with family and friends.
+          </p>
+
+          <p data-i18n="aboutBody3">
+            Whether you ride, volunteer or simply want to join in, there is a welcome here for
+            families, neighbours and visitors from Sussex, London and across England.
+          </p>
+
+          <blockquote class="about-quote">
+            <p>
+              <span class="quote-mark" aria-hidden="true">“</span>
+              <span data-i18n="about-quote">The bike gets us there. The Cause is why we go.</span>
+              <span class="quote-mark" aria-hidden="true">”</span>
+            </p>
+          </blockquote>
+
+          <p class="about-closing" data-i18n="aboutClosing">
+            A shared day with a practical purpose.
           </p>
         </div>
       </div>
@@ -1139,29 +1841,21 @@ if (document.readyState === "loading") {
     <section class="section mission" aria-labelledby="mission-title">
       <div class="container mission-grid">
         <div class="club-panel">
-          <p class="eyebrow">The club behind the day</p>
+          <p class="eyebrow" data-i18n="clubEyebrow">The club behind the day</p>
           <h3>THE CAUSE</h3>
-          <p>
-            A Sussex-based motorcycle and volunteer club.
-          </p>
-          <p>
-            Bringing together people interested in custom motorcycles,
-            travelling and practical volunteering.
-          </p>
+          <p data-i18n="clubDescription1">A Sussex-based motorcycle and volunteer club.</p>
+          <p data-i18n="clubDescription2">Bringing together people interested in custom motorcycles, travelling and practical volunteering.</p>
         </div>
 
         <div class="mission-copy">
-          <p class="eyebrow">Our charity mission</p>
-          <h2 id="mission-title">Care that goes<br>beyond the ride.</h2>
-          <p>
-            Community is at the heart of THE CAUSE, with support reaching
-            people, animals and the places we share.
-          </p>
+          <p class="eyebrow" data-i18n="missionEyebrow">Our charity mission</p>
+          <h2 id="mission-title" data-i18n="missionTitle">Care that goes beyond the ride.</h2>
+          <p data-i18n="missionIntro">Community is at the heart of THE CAUSE, with support reaching people, animals and the places we share.</p>
           <ul class="mission-list" aria-label="Causes supported by the club">
-            <li>Children and adults facing illness or financial difficulty</li>
-            <li>Older and vulnerable people</li>
-            <li>Animal welfare projects</li>
-            <li>Community and environmental projects</li>
+            <li data-i18n="mission1">Children and adults facing illness or financial difficulty</li>
+            <li data-i18n="mission2">Older and vulnerable people</li>
+            <li data-i18n="mission3">Animal welfare projects</li>
+            <li data-i18n="mission4">Community and environmental projects</li>
           </ul>
         </div>
       </div>
@@ -1170,49 +1864,34 @@ if (document.readyState === "loading") {
     <section class="section" aria-labelledby="expect-title">
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow">What to expect</p>
-          <h2 id="expect-title">A day with something to share.</h2>
-          <p>
-            Craftsmanship, community and time well spent together.
-            Come for the motorcycles. Be part of the cause.
-          </p>
+          <p class="eyebrow" data-i18n="expectEyebrow">What to expect</p>
+          <h2 id="expect-title" data-i18n="expectTitle">A day with something to share.</h2>
+          <p data-i18n="expectIntro">Craftsmanship, community and time well spent together. Come for the motorcycles. Be part of the cause.</p>
         </div>
 
         <div class="cards">
           <article class="card">
             <span class="card-number" aria-hidden="true">01</span>
-            <h3>Custom Bikes</h3>
-            <p>
-              Take a closer look at custom motorcycles and the creativity,
-              care and craftsmanship behind them.
-            </p>
+            <h3 data-i18n="card1Title">Custom Bikes</h3>
+            <p data-i18n="card1Text">Take a closer look at custom motorcycles and the creativity, care and craftsmanship behind them.</p>
           </article>
 
           <article class="card">
             <span class="card-number" aria-hidden="true">02</span>
-            <h3>Motorcycle Activities</h3>
-            <p>
-              Enjoy motorcycle activities and share an interest in bikes,
-              travelling and life on two wheels.
-            </p>
+            <h3 data-i18n="card2Title">Motorcycle Activities</h3>
+            <p data-i18n="card2Text">Enjoy motorcycle activities and share an interest in bikes, travelling and life on two wheels.</p>
           </article>
 
           <article class="card">
             <span class="card-number" aria-hidden="true">03</span>
-            <h3>Charity &amp; Volunteering</h3>
-            <p>
-              Discover the club’s mission, get involved in fundraising
-              and explore the value of practical volunteering.
-            </p>
+            <h3 data-i18n="card3Title">Charity &amp; Volunteering</h3>
+            <p data-i18n="card3Text">Discover the club’s mission, get involved in fundraising and explore the value of practical volunteering.</p>
           </article>
 
           <article class="card">
             <span class="card-number" aria-hidden="true">04</span>
-            <h3>Family &amp; Community</h3>
-            <p>
-              Make time for live entertainment, food, local makers and
-              family activities in a welcoming community atmosphere.
-            </p>
+            <h3 data-i18n="card4Title">Family &amp; Community</h3>
+            <p data-i18n="card4Text">Make time for live entertainment, food, local makers and family activities in a welcoming community atmosphere.</p>
           </article>
         </div>
       </div>
@@ -1222,41 +1901,38 @@ if (document.readyState === "loading") {
       <div class="container">
         <div class="info-header">
           <div>
-            <p class="eyebrow">The event at a glance</p>
-            <h2 id="info-title">One day.<br>All together.</h2>
+            <p class="eyebrow" data-i18n="infoEyebrow">The event at a glance</p>
+            <h2 id="info-title" data-i18n="infoTitle">One day. All together.</h2>
           </div>
-          <p>
-            A shared love of motorcycles.<br>
-            A shared commitment to community.
-          </p>
+          <p data-i18n="infoIntro">A shared love of motorcycles. A shared commitment to community.</p>
         </div>
 
         <dl class="info-grid">
           <div>
-            <dt>Date</dt>
+            <dt data-i18n="infoDate">Date</dt>
             <dd>
               <time datetime="2026-10-03">3 October 2026</time>
-              <span class="detail">Saturday</span>
+              <span class="detail" data-i18n="infoSaturday">Saturday</span>
             </dd>
           </div>
           <div>
-            <dt>Time</dt>
+            <dt data-i18n="infoTime">Time</dt>
             <dd>
               <time datetime="10:00">10:00</time>–<time datetime="18:00">18:00</time>
             </dd>
           </div>
           <div>
-            <dt>Location</dt>
+            <dt data-i18n="infoLocation">Location</dt>
             <dd>
               Madeira Drive
               <span class="detail">Brighton, Sussex</span>
             </dd>
           </div>
           <div>
-            <dt>Ticket</dt>
+            <dt data-i18n="infoTicket">Ticket</dt>
             <dd>
               £5
-              <span class="detail">Per person</span>
+              <span class="detail" data-i18n="infoPerPerson">Per person</span>
             </dd>
           </div>
         </dl>
@@ -1267,9 +1943,7 @@ if (document.readyState === "loading") {
   <footer>
     <div class="container footer-inner">
       <div class="footer-brand">THE BIG CAUSE</div>
-      <p class="disclaimer">
-        A made-up event for a learning project. Nothing here is real.
-      </p>
+      <p class="disclaimer" data-i18n="footerDisclaimer">A made-up event for a learning project. Nothing here is real.</p>
     </div>
   </footer>
   <script>
