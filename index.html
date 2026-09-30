@@ -1192,6 +1192,141 @@
   }
 }
 
+
+/* ================================================================
+   FINAL BRAND / GALLERY REFINEMENT
+   One small club logo only + editorial gallery with consistent captions
+   ================================================================ */
+
+.brand-mark img {
+  width: 170px !important;
+  min-width: 0 !important;
+  max-width: 170px !important;
+  height: auto;
+  filter: none !important;
+}
+
+.masthead-inner {
+  min-height: 104px;
+}
+
+.hero-event-logo {
+  display: none !important;
+}
+
+/* Editorial gallery: one panoramic lead image, then a clean 2-column grid. */
+#gallery {
+  overflow: visible;
+}
+
+#gallery .gallery-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 1.15rem !important;
+}
+
+#gallery .gallery-grid figure,
+#gallery .gallery-grid figure:first-child {
+  position: relative;
+  grid-column: auto !important;
+  grid-row: auto !important;
+  margin: 0 !important;
+  overflow: hidden;
+  min-height: 0;
+  aspect-ratio: 4 / 3;
+  background: #d9d1c3;
+}
+
+#gallery .gallery-grid figure:first-child {
+  grid-column: 1 / -1 !important;
+  aspect-ratio: 16 / 7;
+}
+
+#gallery .gallery-grid img,
+#gallery .gallery-grid figure:first-child img {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  object-fit: cover;
+  border-radius: 0 !important;
+  filter: saturate(0.88) contrast(1.03);
+  transition: transform 0.45s ease, filter 0.45s ease;
+}
+
+#gallery .gallery-grid figure:hover img {
+  transform: scale(1.018);
+  filter: saturate(0.96) contrast(1.04);
+}
+
+#gallery .gallery-grid figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: flex-end;
+  min-height: 72px;
+  margin: 0 !important;
+  padding: 2.7rem 1.15rem 1rem !important;
+  background: linear-gradient(to top, rgba(10, 31, 24, 0.84), rgba(10, 31, 24, 0));
+  color: #fffdf8 !important;
+  font-size: 0.78rem !important;
+  line-height: 1.45 !important;
+  letter-spacing: 0.025em;
+  text-align: left !important;
+}
+
+#gallery .gallery-grid figure:first-child figcaption {
+  padding-left: 1.35rem !important;
+  padding-right: 1.35rem !important;
+}
+
+/* Keep all gallery text visually consistent even when captions have different lengths. */
+#gallery .gallery-grid figcaption,
+#gallery .gallery-grid figcaption * {
+  text-align: left !important;
+}
+
+@media (max-width: 900px) {
+  .brand-mark img {
+    width: 145px !important;
+    max-width: 145px !important;
+  }
+
+  #gallery .gallery-grid figure:first-child {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (max-width: 680px) {
+  .brand-mark img {
+    width: 130px !important;
+    max-width: 130px !important;
+  }
+
+  .masthead-inner {
+    min-height: auto;
+  }
+
+  #gallery .gallery-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  #gallery .gallery-grid figure,
+  #gallery .gallery-grid figure:first-child {
+    grid-column: 1 !important;
+    aspect-ratio: 4 / 3;
+  }
+
+  #gallery .gallery-grid figcaption {
+    min-height: 64px;
+    padding: 2.4rem 0.95rem 0.85rem !important;
+    font-size: 0.75rem !important;
+  }
+}
+
 </style>
 </head>
 
@@ -1745,16 +1880,13 @@ if (document.readyState === "loading") {
     <div class="masthead">
       <div class="container masthead-inner">
         <p class="masthead-note" data-i18n="mastheadLeft">Motorcycles &amp; practical volunteering</p>
-        <div class="brand-mark"><img src="the-cause-club-logo.png" alt="The Cause Motorcycle & Charity Club logo"></div>
+        <div class="brand-mark"><img src="the-cause-club-logo-transparent.png" alt="The Cause Motorcycle & Charity Club logo"></div>
         <p class="masthead-note" data-i18n="mastheadRight">A Sussex-based club with community at its heart</p>
       </div>
     </div>
 
     <div class="hero">
       <div class="hero-inner">
-        <div class="hero-event-logo">
-          <img src="the-big-cause-event-logo.png" alt="The Big Cause event logo">
-        </div>
         <p class="eyebrow" data-i18n="heroEyebrow">The annual family charity &amp; motorcycle festival</p>
         <h1 id="event-name">THE BIG CAUSE</h1>
         <p id="event-tagline">One day. Many ways to help.</p>
