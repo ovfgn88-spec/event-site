@@ -2247,7 +2247,22 @@ function showVideo(d) {
 
   b.appendChild(video);
 }
- 
+ const CAPTION_RU = {
+  "Join us on the Brighton seafront for The Big Cause—one epic day with endless ways to help!":
+    "Присоединяйтесь к The Big Cause на набережной Брайтона — один яркий день и множество способов помочь!",
+
+  "Bring your energy and your heart to The Big Cause—let’s make a massive impact together today!":
+    "Приходите на The Big Cause с энергией и желанием помочь — вместе мы можем сделать действительно многое!",
+
+  "Rev up your engines and join us for The Big Cause—one incredible day with many ways to help!":
+    "Заводите моторы и присоединяйтесь к The Big Cause — один насыщенный день и множество способов помочь!",
+
+  "Join us for The Big Cause and discover all the powerful ways you can help rescue animals today!":
+    "Присоединяйтесь к The Big Cause и узнайте, как можно поддержать животных и проекты по их защите.",
+
+  "Roll up your sleeves and join us for The Big Cause—one incredible day to make a massive impact together!":
+    "Засучите рукава и присоединяйтесь к The Big Cause — день, когда вместе можно сделать много полезного."
+};
 // ---------- Gallery (pictures and alt text come from your Images tab) ----------
 function showGallery() {
   if (GALLERY.length === 0) {
@@ -2265,7 +2280,13 @@ function showGallery() {
     img.setAttribute("loading", "lazy");
     fig.appendChild(img);
     if (item.caption) {
-      fig.appendChild(el("figcaption", item.caption));
+      var caption = item.caption;
+
+if (LANG === "ru" && CAPTION_RU[item.caption]) {
+  caption = CAPTION_RU[item.caption];
+}
+
+fig.appendChild(el("figcaption", caption));
     }
     grid.appendChild(fig);
   });
@@ -2347,6 +2368,7 @@ function switchLanguage() {
   LANG = LANG === "en" ? SECOND.code : "en";
   document.documentElement.lang = LANG;
   translatePage();
+  showGallery();
   updateToolbar();
   if (LIVE) {
     renderAll(LIVE);
