@@ -1650,7 +1650,27 @@
     padding: 2.2rem 0.9rem 0.75rem !important;
   }
 }
+/* SAME PAGE BOUNDARIES */
 
+:root {
+  --page-max: 1500px;
+  --page-gap: 4rem;
+}
+
+.container,
+.masthead-inner,
+.hero-inner {
+  width: min(var(--page-max), calc(100% - (var(--page-gap) * 2))) !important;
+  max-width: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* remove extra internal shift from header */
+.masthead-inner {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
 </style>
 </head>
 
