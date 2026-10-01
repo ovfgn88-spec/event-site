@@ -1459,13 +1459,13 @@
   padding: clamp(4rem, 7vw, 6.5rem) 0 !important;
   text-align: left !important;
 }
-
+    
 .hero-inner {
-  width: min(1240px, calc(100% - 4rem)) !important;
+  width: min(1500px, calc(100% - 4rem)) !important;
   max-width: none !important;
   display: grid !important;
-  grid-template-columns: minmax(0, 0.88fr) minmax(440px, 1.12fr);
-  gap: clamp(3rem, 6vw, 6.5rem);
+  grid-template-columns: minmax(0, 0.78fr) minmax(600px, 1.22fr);
+  gap: clamp(2.5rem, 4vw, 4rem);
   align-items: center;
 }
 
@@ -1500,7 +1500,10 @@
 
 .hero-collage {
   margin: 0;
-  min-width: 0;
+  padding: 0;
+  width: 100%;
+  height: auto;
+  min-height: 0;
   overflow: hidden;
   border: 1px solid rgba(213, 191, 143, 0.42);
   background: #18362c;
@@ -1509,10 +1512,13 @@
 
 .hero-collage img {
   display: block;
-  width: 100%;
-  height: auto;
+  width: 100% !important;
+  max-width: none !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  margin: 0 !important;
   object-fit: contain;
-  filter: saturate(0.9) contrast(1.02);
 }
 
 /* Separate top photos are no longer used. */
