@@ -1671,6 +1671,140 @@
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
+
+    /* ELEGANT TAB MENU */
+
+/* desktop */
+@media (min-width: 781px) {
+
+  .menu-toggle {
+    display: none !important;
+  }
+
+  .site-nav {
+    position: static !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-end;
+
+    width: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .site-nav::before {
+    display: none !important;
+  }
+
+  .site-nav a {
+    position: relative;
+
+    display: inline-flex !important;
+    align-items: center;
+
+    padding: 0.7rem 1rem !important;
+    margin: 0 !important;
+
+    border: none !important;
+
+    color: var(--green) !important;
+
+    font-family: var(--sans);
+    font-size: 0.68rem !important;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+
+    text-decoration: none;
+
+    transition:
+      color 0.2s ease,
+      background 0.2s ease;
+  }
+
+  .site-nav a::before {
+    display: none !important;
+  }
+
+  .site-nav a::after {
+    content: "";
+
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    bottom: 0.25rem;
+
+    height: 1px;
+
+    background: var(--brass);
+
+    transform: scaleX(0);
+    transform-origin: center;
+
+    transition: transform 0.25s ease;
+  }
+
+  .site-nav a:hover {
+    color: var(--brass-dark) !important;
+  }
+
+  .site-nav a:hover::after,
+  .site-nav a:focus-visible::after {
+    transform: scaleX(1);
+  }
+}
+
+
+/* mobile */
+@media (max-width: 780px) {
+
+  .menu-toggle {
+    display: inline-flex !important;
+  }
+
+  .site-nav {
+    position: absolute !important;
+    top: 100% !important;
+    right: 1rem !important;
+
+    display: none !important;
+
+    width: calc(100vw - 2rem) !important;
+
+    padding: 1rem 1.3rem !important;
+
+    background: var(--green) !important;
+
+    border: 1px solid rgba(194,166,110,0.45) !important;
+
+    box-shadow:
+      0 20px 50px rgba(0,0,0,0.18) !important;
+  }
+
+  .site-nav.is-open {
+    display: grid !important;
+  }
+
+  .site-nav a {
+    padding: 0.9rem 0 !important;
+
+    color: #f7f1e5 !important;
+
+    border-bottom:
+      1px solid rgba(255,255,255,0.12) !important;
+
+    font-family: var(--serif);
+    font-size: 1.15rem !important;
+  }
+
+  .site-nav a:last-child {
+    border-bottom: none !important;
+  }
+}
 </style>
 </head>
 
