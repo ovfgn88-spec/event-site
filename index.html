@@ -2937,6 +2937,26 @@ backToTop.addEventListener("click", function () {
   });
 });
 </script>
+
+  <script>
+  if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+  }
+
+  window.addEventListener("pageshow", function () {
+    const navigation = performance.getEntriesByType("navigation")[0];
+
+    if (navigation && navigation.type === "reload") {
+      document.documentElement.style.scrollBehavior = "auto";
+
+      setTimeout(function () {
+        window.scrollTo(0, 0);
+        document.documentElement.style.scrollBehavior = "";
+      }, 0);
+    }
+  });
+</script>
+
   
 </body>
 </html>
