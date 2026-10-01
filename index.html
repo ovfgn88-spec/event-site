@@ -174,10 +174,14 @@
       right: 2rem;
     }
 
-    .hero-inner {
-      max-width: 1040px;
-      margin-inline: auto;
-    }
+   .hero-inner {
+  width: min(1350px, calc(100% - 4rem)) !important;
+  max-width: none !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 0.75fr) minmax(520px, 1.25fr);
+  gap: clamp(2.5rem, 5vw, 5rem);
+  align-items: center;
+}
 
     .hero .eyebrow {
       margin-bottom: 2.4rem;
